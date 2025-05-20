@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 19:29:36 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/20 13:52:46 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 15:45:11 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdbool.h>
 
 /***************************/
 /********linked list********/
@@ -22,7 +23,7 @@
 typedef struct s_list
 {
 	void			*content;
-	struct slist	*next;
+	struct s_list	*next;
 }					t_list;
 
 /***************************/
@@ -82,5 +83,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

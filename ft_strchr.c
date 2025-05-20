@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:36:02 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/13 17:09:24 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 11:36:06 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ char	*ft_strchr(const char *s, int c)
 	{
 		n++;
 		if (*(s + n) == '\0')
-			return ((unsigned char *)(s + n));
+			return ((char *)(s + n));
 	}
 	n = 0;
 	while (*(s + n) && *(s + n) != (char)c)
 		n++;
 	if (*(s + n) == (char)c)
-		return ((unsigned char *)(s + n));
+		return ((char *)(s + n));
 	return (NULL);
 }

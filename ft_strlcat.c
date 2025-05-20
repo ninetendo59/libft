@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:20:07 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/13 16:27:37 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 11:37:12 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	if ((!size && !dst) || ft_strlen(dst) >= size)
 		return (ft_strlen(src) + size);
 	while (*(src + i) && i < (size - ft_strlen(dst) - 1))
-		*(dst + i++) = *(src + i);
+	{
+		*(dst + i) = *(src + i);
+		i++;
+	}
 	*(dst + ft_strlen(dst) + i) = '\0';
 	return (ft_strlen(dst) + ft_strlen(src));
 }

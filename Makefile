@@ -7,7 +7,7 @@ SRCS = ft_atoi.c ft_calloc.c   ft_isalpha.c  ft_isdigit.c  ft_itoa.c    ft_memcm
 
 OBJ = $(SRCS:.c=.o)
 
-CFLAGS = -std=c98 -Wall -Wextra -Werror
+CFLAGS = -std=c99 -Wall -Wextra -Werror
 
 SRCS_BONUS = 
 OBJ_BONUS = $(SRCS_BONUS:.c=.o)
@@ -16,7 +16,7 @@ OBJ_BONUS = $(SRCS_BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar r $(CC) $(CFLAGS) -o $@ $^
+	ar rcs $(CC) $(CFLAGS) -o $@ $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -26,12 +26,12 @@ clean:
 	rm -rf $(OBJ_BONUS)
 
 fclean: clean
-	rm -rf ($NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
 bonus: $(OBJ_BONUS)
-	arr r $(NAME) $(OBJ_BONUS)
+	ar rcs $(NAME) $(OBJ_BONUS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 .PHONY: all clean fclean re bonus

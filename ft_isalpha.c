@@ -6,12 +6,12 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 19:29:34 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/12 19:36:30 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 11:34:18 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	return (('A' <= (char)c) && ('Z' >= (char)c)
+	return ((('A' <= (char)c) && ('Z' >= (char)c))
 		|| (((char)c >= 'a') && ((char)c <= 'z')));
 }

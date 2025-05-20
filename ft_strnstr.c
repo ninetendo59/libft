@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 12:33:45 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/15 14:46:01 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 11:35:13 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	n;
-	int	temp;
+	size_t	n;
+	size_t	temp;
 
 	if (!*little)
 		return ((char *)big);

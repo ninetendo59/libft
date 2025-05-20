@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 14:47:51 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/15 15:18:44 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 11:33:41 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_atoi(const char *nptr)
 
 	ret = 0;
 	sign = 1;
-	while (*nptr && *nptr == ' ' || (*nptr >= '\t' && *nptr <= '\r'))
+	while (*nptr && (*nptr == ' ' || (*nptr >= '\t' && *nptr <= '\r')))
 		nptr++;
 	if (*nptr == '-')
 	{

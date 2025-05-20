@@ -16,7 +16,7 @@ OBJ_BONUS = $(SRCS_BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(CC) $(CFLAGS) -o $@ $^
+	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -32,6 +32,5 @@ re: fclean all
 
 bonus: $(OBJ_BONUS)
 	ar rcs $(NAME) $(OBJ_BONUS)
-	$(CC) $(CFLAGS) -o $@ $^
 
 .PHONY: all clean fclean re bonus

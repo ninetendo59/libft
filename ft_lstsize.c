@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 13:11:30 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/20 13:16:39 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 22:52:23 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	n;
 
 	n = 0;
-	while (lst)
+	while (lst != NULL)
 	{
 		lst = lst->next;
 		n++;

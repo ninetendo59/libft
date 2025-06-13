@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 12:29:01 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/19 15:29:49 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 22:46:56 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static size_t	split_count(const char *str, char c)
 	{
 		while (*str == c && *str)
 			str++;
-		if (*str != c)
+		if (*str != c && *str)
 		{
 			size++;
 			while (*str != c && *str)
@@ -31,55 +31,29 @@ static size_t	split_count(const char *str, char c)
 	return (size);
 }
 
-static size_t	getsplitlen(char const *s, char c)
-{
-	int	split_size;
-
-	split_size = 0;
-	while (s[split_size] && s[split_size] != c)
-		split_size++;
-	return (split_size);
-}
-
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
+	char	**result;
 	size_t	n;
+	size_t	chr_len;
 
-	split = malloc(sizeof(char *) * split_count(s, c));
-	if (!split || !s)
+	result = malloc(sizeof(char *) * (split_count(s, c) + 1));
+	if (!result)
 		return (NULL);
 	n = 0;
+	chr_len = 0;
 	while (*s)
 	{
-		while (*s == c)
+		while (*s == c && *s)
 			s++;
 		if (*s && *s != c)
 		{
-			split[n] = ft_calloc(getsplitlen(s, c) + 1, sizeof(char));
-			if (!*split)
-				return (NULL);
-			ft_memcpy(split[n], s, getsplitlen(s, c));
-			s += getsplitlen(s, c);
+			chr_len = ft_strlen(s) - ft_strlen(ft_strchr(s, c));
+			result[n] = ft_substr(s, 0, chr_len);
+			s += chr_len;
+			n++;
 		}
-		n++;
 	}
-	if (split)
-		split[n] = NULL;
-	return (split);
+	result[n] = NULL;
+	return (result);
 }
-
-// # include <stdio.h>
-// int main ()
-// {
-// 	char **tmp = ft_split("string ss isMy name is ", 's');
-// 	int n = 0;
-
-// 	while (tmp[n])
-// 	{
-// 		printf(
-// 			"count %d\nstring: \"%s\"\nchar: \'%c\'\nascii: \'%d\'\nmem:%p\n\n",
-// 			n + 1, tmp[n], *(tmp[n]), *(tmp[n]), tmp[n]);
-// 		n++;
-// 	}
-// }

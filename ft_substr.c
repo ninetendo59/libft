@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 17:18:22 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/15 17:37:33 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 20:39:23 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,20 @@ char	*ft_substr(char const *s, unsigned start, size_t len)
 	if (!s)
 		return (NULL);
 	s_len = ft_strlen(s);
-	if (s_len < len)
-		len = s_len;
+	if ((s_len - start) < len)
+		len = s_len - start;
 	if (start >= s_len)
 		return (ft_strdup(""));
-	substr = malloc(sizeof(*substr) * len + 1);
+	substr = ft_calloc(sizeof(*substr), len + 1);
 	if (!substr)
 		return (NULL);
 	while (*s && start--)
 		s++;
-	substr = ft_memcpy(substr, s, len);
-	*(substr + len) = '\0';
+	start = 0;
+	while (*s && start < len)
+	{
+		*(substr + start) = *(s + start);
+		start++;
+	}
 	return (substr);
 }

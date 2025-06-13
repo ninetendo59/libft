@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 18:35:11 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/19 12:28:24 by hetan            ###   ########.fr       */
+/*   Updated: 2025/06/13 19:28:54 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(trim, (s1 + in), ((out - in) + 1));
 	return (trim);
 }
+
+// #include <stdio.h>
+
+// int main()
+// {
+// 	printf("%s\n", ft_strtrim("nnaaaaaaammmmme is test ennnaaaaaammmm", "nam"));
+// }

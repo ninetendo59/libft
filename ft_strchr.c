@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:36:02 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/20 11:36:06 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 16:15:02 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ char	*ft_strchr(const char *s, int c)
 {
 	size_t	n;
 
-	if (!s || !*s)
+	if ((!s || !*s) && c)
 		return (NULL);
+	if (!*s && (char)c == '\0')
+		return ((char *)s);
 	n = 0;
 	while (*(s + n) && c == 0)
 	{

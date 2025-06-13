@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:56:32 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/20 11:37:33 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/31 00:37:44 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ char	*ft_strrchr(const char *s, int c)
 {
 	size_t	n;
 
-	if (!s || !*s)
+	if ((!s || !*s) && c)
 		return (NULL);
+	if (!*s && (char)c == '\0')
+		return ((char *)s);
 	n = ft_strlen(s);
 	if (c == 0)
 		return ((char *)(s + n));
@@ -28,3 +30,10 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)(s + n));
 	return (NULL);
 }
+
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+// 	printf("ft: %s\nori: %s\n", ft_strrchr("", '\0'), strrchr("", '\0'));
+// }

@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 19:29:36 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/20 15:45:11 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 22:47:34 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-# include <stdbool.h>
 
 /***************************/
 /********linked list********/

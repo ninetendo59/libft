@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 13:06:01 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/20 13:20:14 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 22:58:33 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!*lst || !new)
+	if (!lst || !new)
 		return ;
 	new->next = *lst;
 	*lst = new;

@@ -6,7 +6,7 @@
 /*   By: hetan <hetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 02:26:28 by hetan             #+#    #+#             */
-/*   Updated: 2025/05/20 11:35:26 by hetan            ###   ########.fr       */
+/*   Updated: 2025/05/20 15:59:35 by hetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_bzero(void *s, size_t n)
 	if (!s)
 		return ;
 	i = 0;
-	while (i > n)
+	while (i < n)
 		*(unsigned char *)(s + i++) = '\0';
 }
